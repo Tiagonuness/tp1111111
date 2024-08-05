@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Trabalho1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Trabalho1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Trabalho1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Camada de Apresentação/ControladorasApr.cpp" />
+		<Unit filename="Camada de Apresentação/ControladorasApr.h" />
+		<Unit filename="Camada de Serviço/Banco de Dados/ConexaoBD.cpp" />
+		<Unit filename="Camada de Serviço/Banco de Dados/ConexaoBD.h" />
+		<Unit filename="Camada de Serviço/Banco de Dados/sqlite3.h" />
+		<Unit filename="Camada de Serviço/Banco de Dados/sqlite3.o" />
+		<Unit filename="Camada de Serviço/Banco de Dados/trabalho2db.db" />
+		<Unit filename="Camada de Serviço/ControladorasServico.cpp" />
+		<Unit filename="Camada de Serviço/ControladorasServico.h" />
+		<Unit filename="Camada de Serviço/Stubs.h" />
+		<Unit filename="Comandos.cpp" />
+		<Unit filename="Comandos.h" />
+		<Unit filename="Dominios.cpp" />
+		<Unit filename="Dominios.h" />
+		<Unit filename="Entidades.cpp" />
+		<Unit filename="Entidades.h" />
+		<Unit filename="Fabricas.h" />
+		<Unit filename="FachadaTeste.h" />
+		<Unit filename="Interfaces.h" />
+		<Unit filename="Teste.cpp" />
+		<Unit filename="Teste.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="2" line="2" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general use_at_in_tags="1" />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
