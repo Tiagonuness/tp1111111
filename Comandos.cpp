@@ -1,7 +1,7 @@
 #include "Comandos.h"
 #include "Camada de Serviço/Banco de Dados/ConexaoBD.h"
 
-void ComandoIAContaCriar::executar() {
+void ComandoIAContaCriar::executar() { //200060422
     string inputUsuario;
 
     cout << "--- Criacao de Conta ---" << endl;
@@ -35,7 +35,7 @@ void ComandoIAContaCriar::executar() {
     };
 };
 
-void ComandoIAContaAtualizar::executar() {
+void ComandoIAContaAtualizar::executar() { //200060422
     cout << "--- Atualizacao de Conta ---" << endl;
     cout << "Digite o CPF: ";
     cin >> cpfValue;
@@ -69,7 +69,7 @@ void ComandoIAContaAtualizar::executar() {
 
 };
 
-void ComandoIAContaExcluir::executar() {
+void ComandoIAContaExcluir::executar() { //200060422
     cout << "--- Excluir Conta ---" << endl;
     cout << "Digite o CPF: ";
     cin >> cpfValue;
@@ -102,7 +102,7 @@ void ComandoIAContaExcluir::executar() {
     };
 };
 
-void ComandoIAContaListar::executar() {
+void ComandoIAContaListar::executar() { //200060422
     Conta contalocal;
     conta = &contalocal;
 

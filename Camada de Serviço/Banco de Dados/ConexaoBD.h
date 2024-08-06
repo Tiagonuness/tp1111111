@@ -95,11 +95,11 @@ public:
 
 //---------------------------------------------------------------------------
 
-inline string ElementoResultado::getNomeColuna() const {
+inline string ElementoResultado::getNomeColuna() const { //200060422
         return nomeColuna;
 }
 
-inline string ElementoResultado::getValorColuna() const {
+inline string ElementoResultado::getValorColuna() const { //200060422
         return valorColuna;
 };
 

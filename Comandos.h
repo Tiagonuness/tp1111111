@@ -30,7 +30,7 @@ public:
 };
 
 /// Declaracao de classe Comando para atualizar Conta.
-class ComandoIAContaAtualizar : public ComandoIAConta {
+class ComandoIAContaAtualizar : public ComandoIAConta { //200060422
 private:
     InterfaceSConta* ISConta;
     string cpfValue, nomeValue, senhaValue;
@@ -45,7 +45,7 @@ public:
 };
 
 /// Declaracao de classe Comando para excluir Conta.
-class ComandoIAContaExcluir : public ComandoIAConta {
+class ComandoIAContaExcluir : public ComandoIAConta { //200060422
 private:
     InterfaceSConta* ISConta;
     string cpfValue, nomeValue, senhaValue;
@@ -60,7 +60,7 @@ public:
 };
 
 /// Declaracao de classe Comando para listar dados da Conta.
-class ComandoIAContaListar : public ComandoIAConta {
+class ComandoIAContaListar : public ComandoIAConta { //200060422
 private:
     InterfaceSConta* ISConta;
     string cpfValue;
@@ -69,8 +69,8 @@ private:
     Nome nome;
     Senha senha;
 public:
-    ComandoIAContaListar() : ISConta(nullptr) {}; /// Metodo por meio do qual e solicitada a execucao do comando.
-    ~ComandoIAContaListar() {delete ISConta;};
+    ComandoIAContaListar() : ISConta(nullptr) {};
+    ~ComandoIAContaListar() {delete ISConta;}; /// Metodo por meio do qual e solicitada a execucao do comando.
     void executar() override;
 };
 

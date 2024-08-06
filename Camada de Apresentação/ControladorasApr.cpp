@@ -127,6 +127,7 @@ void CntrlAConta::executar() {
             case LISTAR:
                 comando = new ComandoIAContaListar();
                 comando->executar();
+                break;
             case ATUALIZAR:
                 comando = new ComandoIAContaAtualizar();
                 comando->executar();

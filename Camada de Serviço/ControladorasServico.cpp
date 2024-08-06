@@ -17,7 +17,7 @@ bool CntrlSConta::criar(Conta conta) {
 };
 
 // Implementação dos outros métodos para evitar o erro de classe abstrata
-bool CntrlSConta::recuperar(Conta* conta) {
+bool CntrlSConta::recuperar(Conta* conta) { //200060422
     try {
         ComandoListarConta comandoListarConta(*conta);
         comandoListarConta.executar();
@@ -38,7 +38,7 @@ bool CntrlSConta::recuperar(Conta* conta) {
     }
 }
 
-bool CntrlSConta::atualizar(Conta conta) {
+bool CntrlSConta::atualizar(Conta conta) { //200060422
     try {
         ComandoAtualizarConta comandoAtualizarConta(conta);
         comandoAtualizarConta.executar();
@@ -52,7 +52,7 @@ bool CntrlSConta::atualizar(Conta conta) {
     };
 };
 
-bool CntrlSConta::excluir(Conta conta) {
+bool CntrlSConta::excluir(Conta conta) { //200060422
     try {
         ComandoExcluirConta ComandoExcluirConta(conta);
         ComandoExcluirConta.executar();
