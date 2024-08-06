@@ -231,3 +231,88 @@
 	<functional>
 	"Teste.h"
 
+1722901922 source:d:\maisrecente2\tp1111111\camada de apresentação\controladorasapr.cpp
+	"ControladorasApr.h"
+
+1722901922 d:\maisrecente2\tp1111111\camada de apresentação\controladorasapr.h
+	"../Interfaces.h"
+	"../Camada de Serviço/Banco de Dados/ConexaoBD.h"
+	"../Comandos.h"
+
+1722909147 d:\maisrecente2\tp1111111\interfaces.h
+	"Entidades.h"
+
+1722901922 d:\maisrecente2\tp1111111\entidades.h
+	"Dominios.h"
+
+1722901922 d:\maisrecente2\tp1111111\dominios.h
+	<iostream>
+	<stdexcept>
+	<regex>
+	<map>
+	<iomanip>
+	<algorithm>
+	<cctype>
+	<sstream>
+	<vector>
+
+1722906724 d:\maisrecente2\tp1111111\camada de serviço\banco de dados\conexaobd.h
+	"../../Entidades.h"
+	<list>
+	<iostream>
+	<conio.h>
+	<string>
+	<stdio.h>
+	"sqlite3.h"
+
+1722901922 d:\maisrecente2\tp1111111\camada de serviço\banco de dados\sqlite3.h
+	<stdarg.h>
+
+1722907551 d:\maisrecente2\tp1111111\comandos.h
+	"Camada de Apresentação/ControladorasApr.h"
+	"Camada de Serviço/ControladorasServico.h"
+
+1722909091 d:\maisrecente2\tp1111111\camada de serviço\controladorasservico.h
+	"../Interfaces.h"
+
+1722908760 source:d:\maisrecente2\tp1111111\camada de serviço\banco de dados\conexaobd.cpp
+	"ConexaoBD.h"
+
+1722907524 source:d:\maisrecente2\tp1111111\camada de serviço\controladorasservico.cpp
+	"ControladorasServico.h"
+	"Banco de Dados/ConexaoBD.h"
+
+1722901922 source:d:\maisrecente2\tp1111111\dominios.cpp
+	"Dominios.h"
+
+1722901922 source:d:\maisrecente2\tp1111111\entidades.cpp
+	"Entidades.h"
+
+1722904909 source:d:\maisrecente2\tp1111111\main.cpp
+	"FachadaTeste.h"
+	"Camada de Apresentação/ControladorasApr.h"
+
+1722901922 d:\maisrecente2\tp1111111\fachadateste.h
+	<vector>
+	<string>
+	<iostream>
+	"Teste.h"
+
+1722901923 d:\maisrecente2\tp1111111\teste.h
+	<string>
+	<functional>
+	"Entidades.h"
+
+1722901923 source:d:\maisrecente2\tp1111111\teste.cpp
+	"Teste.h"
+	"Fabricas.h"
+
+1722901922 d:\maisrecente2\tp1111111\fabricas.h
+	<string>
+	<functional>
+	"Teste.h"
+
+1722909127 source:d:\maisrecente2\tp1111111\comandos.cpp
+	"Comandos.h"
+	"Camada de Serviço/Banco de Dados/ConexaoBD.h"
+

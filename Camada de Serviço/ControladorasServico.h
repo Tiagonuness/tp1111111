@@ -10,7 +10,7 @@ public:
     bool criar(Conta) override;
     bool recuperar(Conta*) override;
     bool atualizar(Conta) override;
-    bool excluir(Cpf) override;
+    bool excluir(Conta) override;
 };
 
 #endif // CONTROLADORASSERVICO_H_INCLUDED

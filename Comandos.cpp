@@ -83,10 +83,14 @@ void ComandoIAContaExcluir::executar() {
         nome.setValor(nomeValue);
         senha.setValor(senhaValue);
 
+        conta.setCpf(cpf);
+        conta.setNome(nome);
+        conta.setSenha(senha);
+
         CntrlSConta cntrlSConta;
 
-        if (cntrlSConta.excluir(cpf)) {
-            cout << "Sucesso na atualizacao da Conta." << endl;
+        if (cntrlSConta.excluir(conta)) {
+            cout << "Sucesso na exclusão da Conta." << endl;
         } else {
             cout << "Falha na exclusão da conta." << endl;
         };
@@ -99,18 +103,31 @@ void ComandoIAContaExcluir::executar() {
 };
 
 void ComandoIAContaListar::executar() {
-    cout << "Digite o CPF: teste";
+    Conta contalocal;
+    conta = &contalocal;
+
+    cout << "Entrou no método executar." << endl;
+
+    cout << "Digite o CPF: ";
     cin >> cpfValue;
+    cpf.setValor(cpfValue);
+    conta->setCpf(cpf);
 
     try {
-        cpf.setValor(cpfValue);
+        conta->getCpf().setValor(cpfValue); // Usar '->' em vez de '.'
+        cout << "CPF definido." << endl;
+
+        // Configurar a conta com o CPF
         conta->setCpf(cpf);
+        cout << "Conta configurada." << endl;
+
         CntrlSConta cntrlSConta;
 
-        cout << "entra aqui?" << endl;
+        cout << "Chamando recuperar." << endl;
 
+        // Passar um ponteiro para a conta
         if (cntrlSConta.recuperar(conta)) {
-            cout << "--- Detalhes da Conta ---" << endl;
+            cout << "Sucesso na leitura da conta." << endl;
         } else {
             cout << "Falha na recuperação da conta." << endl;
         }

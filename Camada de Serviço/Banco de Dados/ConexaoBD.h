@@ -89,7 +89,8 @@ public:
 /// Declaracao de classe Comando para listar dados da Conta no BD.
 class ComandoListarConta : public ComandoSQL { // 200060422
 public:
-    ComandoListarConta(Conta* conta);
+    ComandoListarConta(Conta conta);
+    string getResultado();
 };
 
 //---------------------------------------------------------------------------

@@ -41,7 +41,7 @@ public:
     virtual bool criar(Conta) = 0;
     virtual bool recuperar(Conta*) = 0;
     virtual bool atualizar(Conta) = 0;
-    virtual bool excluir(Cpf) = 0;
+    virtual bool excluir(Conta) = 0;
 };
 
 #endif // INTERFACES_H

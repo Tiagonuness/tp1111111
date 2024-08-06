@@ -88,6 +88,23 @@ ComandoExcluirConta::ComandoExcluirConta(Conta conta) {
     comandoSQL = "DELETE FROM conta WHERE cpf = '" + conta.getCpf().getValor() + "';";
 }
 
-ComandoListarConta::ComandoListarConta(Conta* conta) {
-    comandoSQL = "SELECT * FROM conta WHERE cpf = '" + conta->getCpf().getValor() + "';";
+ComandoListarConta::ComandoListarConta(Conta conta) {
+    comandoSQL = "SELECT * FROM conta WHERE cpf = '" + conta.getCpf().getValor() + "';";
+}
+
+string ComandoListarConta::getResultado() {
+    if (listaResultado.empty()) {
+        throw EErroPersistencia("Lista de resultados vazia.");
+    }
+
+    cout << "--- Detalhes da conta ---" << endl;
+    for (const auto& resultado : listaResultado) {
+        cout << resultado.getValorColuna() << endl;
+    }
+
+    // Armazenar o primeiro elemento da lista para retornar
+    ElementoResultado resultado = listaResultado.front();
+    listaResultado.pop_front();  // Remover o primeiro elemento da lista
+
+    return resultado.getValorColuna();
 }
