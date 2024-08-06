@@ -2,6 +2,9 @@
 #define CONTROLADORASSERVICO_H_INCLUDED
 #include "../Interfaces.h"
 
+/// @file ControladorasServico.h Arquivo contendo as Controladoras da Camada de Servico.
+
+/// Declaracao de classe Controladora que realize interface de Contas na Camada de Servico.
 class CntrlSConta : public InterfaceSConta {
 public:
     bool criar(Conta) override;

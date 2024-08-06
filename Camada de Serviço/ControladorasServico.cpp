@@ -13,13 +13,22 @@ bool CntrlSConta::criar(Conta conta) {
     } catch (const EErroPersistencia& e) {
         cout << "Erro de persistência: " << e.what() << endl;
         return false;
-    }
-}
+    };
+};
 
 // Implementação dos outros métodos para evitar o erro de classe abstrata
 bool CntrlSConta::recuperar(Conta* conta) {
-    // Implementação do método recuperar (a ser desenvolvida)
-    return false;
+    try {
+        ComandoListarConta comandoListarConta(conta);
+        comandoListarConta.executar();
+        return true;
+    } catch (const std::invalid_argument& e) {
+        std::cout << "Erro na recuperação da conta: " << e.what() << std::endl;
+        return false;
+    } catch (const EErroPersistencia& e) {
+        std::cout << "Erro de persistência: " << e.what() << std::endl;
+        return false;
+    }
 }
 
 bool CntrlSConta::atualizar(Conta conta) {
@@ -33,10 +42,10 @@ bool CntrlSConta::atualizar(Conta conta) {
     } catch (const EErroPersistencia& e) {
         cout << "Erro de persistência: " << e.what() << endl;
         return false;
-    }
-}
+    };
+};
 
 bool CntrlSConta::excluir(Cpf cpf) {
     // Implementação do método excluir (a ser desenvolvida)
     return false;
-}
+};

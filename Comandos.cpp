@@ -1,16 +1,8 @@
 #include "Comandos.h"
 #include "Camada de Serviço/Banco de Dados/ConexaoBD.h"
-#include "Camada de Serviço/ControladorasServico.h"
 
 void ComandoIAContaCriar::executar() {
-    Conta conta;
-    Cpf cpf;
-    Nome nome;
-    Senha senha;
-
-    string cpfValue;
-    string nomeValue;
-    string senhaValue;
+    string inputUsuario;
 
     cout << "--- Criacao de Conta ---" << endl;
     cout << "Digite o CPF: ";
@@ -19,7 +11,6 @@ void ComandoIAContaCriar::executar() {
     cin >> nomeValue;
     cout << "Digite sua senha: ";
     cin >> senhaValue;
-
     try {
         cpf.setValor(cpfValue);
         nome.setValor(nomeValue);
@@ -30,28 +21,21 @@ void ComandoIAContaCriar::executar() {
         conta.setSenha(senha);
 
         CntrlSConta cntrlSConta;
+
         if (cntrlSConta.criar(conta)) {
             cout << "Sucesso na criacao da Conta." << endl;
         } else {
             cout << "Falha na criacao da conta." << endl;
-        }
+        };
     } catch (const invalid_argument& e) {
         cout << "Erro na criacao da conta: " << e.what() << endl;
+
     } catch (const EErroPersistencia& e) {
         cout << "Erro de persistência: " << e.what() << endl;
-    }
+    };
 };
 
-void ComandoIAContaAtualizar::atualizar() {
-    Conta conta;
-    Cpf cpf;
-    Nome nome;
-    Senha senha;
-
-    string cpfValue;
-    string nomeValue;
-    string senhaValue;
-
+void ComandoIAContaAtualizar::executar() {
     cout << "--- Atualizacao de Conta ---" << endl;
     cout << "Digite o CPF: ";
     cin >> cpfValue;
@@ -70,6 +54,7 @@ void ComandoIAContaAtualizar::atualizar() {
         conta.setSenha(senha);
 
         CntrlSConta cntrlSConta;
+
         if (cntrlSConta.atualizar(conta)) {
             cout << "Sucesso na atualizacao da Conta." << endl;
         } else {
@@ -77,22 +62,15 @@ void ComandoIAContaAtualizar::atualizar() {
         }
     } catch (const invalid_argument& e) {
         cout << "Erro na atualizacao da conta: " << e.what() << endl;
+
     } catch (const EErroPersistencia& e) {
         cout << "Erro de persistência: " << e.what() << endl;
-    }
-}
+    };
 
-void ComandoIAContaAtualizar::excluir() {
-    Conta conta;
-    Cpf cpf;
-    Nome nome;
-    Senha senha;
+};
 
-    string cpfValue;
-    string nomeValue;
-    string senhaValue;
-
-    cout << "--- Excluir de Conta ---" << endl;
+void ComandoIAContaExcluir::executar() {
+    cout << "--- Excluir Conta ---" << endl;
     cout << "Digite o CPF: ";
     cin >> cpfValue;
     cout << "Digite o Nome: ";
@@ -105,52 +83,40 @@ void ComandoIAContaAtualizar::excluir() {
         nome.setValor(nomeValue);
         senha.setValor(senhaValue);
 
-        conta.setCpf(cpf);
-        conta.setNome(nome);
-        conta.setSenha(senha);
-
         CntrlSConta cntrlSConta;
-        if (cntrlSConta.excluir(conta)) {
+
+        if (cntrlSConta.excluir(cpf)) {
             cout << "Sucesso na atualizacao da Conta." << endl;
         } else {
-            cout << "Falha na atualizacao da conta." << endl;
-        }
+            cout << "Falha na exclusão da conta." << endl;
+        };
+
     } catch (const invalid_argument& e) {
         cout << "Erro na atualizacao da conta: " << e.what() << endl;
     } catch (const EErroPersistencia& e) {
         cout << "Erro de persistência: " << e.what() << endl;
-    }
-}
+    };
+};
 
 void ComandoIAContaListar::executar() {
+    cout << "Digite o CPF: teste";
+    cin >> cpfValue;
+
     try {
+        cpf.setValor(cpfValue);
+        conta->setCpf(cpf);
         CntrlSConta cntrlSConta;
-        vector<Conta> contas = cntrlSConta.listarTodasContas();
 
-        // Verifica se há contas para mostrar
-        if (contas.empty()) {
-            cout << "Nenhuma conta encontrada." << endl;
-            return;
+        cout << "entra aqui?" << endl;
+
+        if (cntrlSConta.recuperar(conta)) {
+            cout << "--- Detalhes da Conta ---" << endl;
+        } else {
+            cout << "Falha na recuperação da conta." << endl;
         }
-
-        // Imprime os dados de forma bonita
-        cout << "--- Listagem de Contas ---" << endl;
-        cout << "-----------------------------------" << endl;
-        cout << "| CPF                | Nome          | Senha         |" << endl;
-        cout << "-----------------------------------" << endl;
-
-        for (const auto& conta : contas) {
-            cout << "| " << conta.getCpf().getValor()
-                 << " | " << conta.getNome().getValor()
-                 << " | " << conta.getSenha().getValor()
-                 << " |" << endl;
-        }
-
-        cout << "-----------------------------------" << endl;
     } catch (const EErroPersistencia& e) {
         cout << "Erro ao listar contas: " << e.what() << endl;
     } catch (const exception& e) {
         cout << "Erro inesperado: " << e.what() << endl;
     }
 }
-

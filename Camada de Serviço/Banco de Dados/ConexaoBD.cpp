@@ -88,7 +88,6 @@ ComandoExcluirConta::ComandoExcluirConta(Conta conta) {
     comandoSQL = "DELETE FROM conta WHERE cpf = '" + conta.getCpf().getValor() + "';";
 }
 
-ComandoListarConta::ComandoListarConta(Conta conta) {
-    comandoSQL = "SELECT * FROM conta WHERE cpf = '" + conta.getCpf().getValor() + "';";
+ComandoListarConta::ComandoListarConta(Conta* conta) {
+    comandoSQL = "SELECT * FROM conta WHERE cpf = '" + conta->getCpf().getValor() + "';";
 }
-
